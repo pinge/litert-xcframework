@@ -2,6 +2,8 @@
 
 LiteRT iOS XCFrameworks for Swift Package Manager and CocoaPods.
 
+[![LiteRT v2.1.6](https://img.shields.io/github/v/release/pinge/litert-xcframework?filter=v2.1.6&label=LiteRT&style=plastic&color=green)](https://github.com/pinge/litert-xcframework/releases/tag/v2.1.6)
+
 ## Why this package
 
 Google distributes LiteRT 2.1.6 and 2.2.0 with the iOS Metal accelerator as a standalone dynamic library (`.dylib`), but iOS [does not support](https://developer.apple.com/documentation/bundleresources/placing-content-in-a-bundle#Place-content-based-on-type-and-platform) third-party standalone dynamic libraries. The CLiteRT XCFramework [build target](https://github.com/google-ai-edge/LiteRT/blob/v2.1.6/litert/swift/BUILD#L108-L130) generates device frameworks with Simulator metadata, and 2.2.0 ships an [incompatible](#litert-220-metal-abi-header) Metal accelerator ABI.
