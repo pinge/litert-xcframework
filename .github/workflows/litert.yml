@@ -17,6 +17,10 @@ permissions:
 
 concurrency:
   group: litert-release
+  # By default, only one job or workflow run can be pending in a concurrency group at a time.
+  # To allow multiple runs to queue instead of being canceled, set queue: max.
+  # https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency#example-queueing-multiple-pending-runs
+  queue: max
   cancel-in-progress: false
 
 jobs:
@@ -33,6 +37,9 @@ jobs:
             exit 1
           fi
 
+      # Check if the release and its tag already exist.
+      # https://docs.github.com/en/rest/releases/releases#get-a-release-by-tag-name
+      # https://docs.github.com/en/rest/git/refs#get-a-reference
       - name: Check Release
         id: release
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -48,7 +55,15 @@ jobs:
               return "false"
             } catch (error) {
               if (error.status === 404) {
-                return "true"
+                try {
+                  await github.rest.git.getRef({ ...context.repo, ref: `tags/${process.env.TAG}` })
+                  throw new Error(`Tag ${process.env.TAG} already exists without a release.`)
+                } catch (tagError) {
+                  if (tagError.status === 404) {
+                    return "true"
+                  }
+                  throw tagError
+                }
               }
               throw error
             }
