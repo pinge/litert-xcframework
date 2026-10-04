@@ -65,7 +65,7 @@ case "$PACKAGE_MANAGER" in
     ;;
 esac
 
-TEST_WORKSPACE="$(mktemp -d "${TMPDIR:-/tmp}/litert-ios-integration.XXXXXX")"
+TEST_WORKSPACE="$(mktemp -d "${TMPDIR:-/tmp}/litert-xcframework-integration.XXXXXX")"
 mkdir -p "$TEST_WORKSPACE/Examples" "$TEST_WORKSPACE/Tests"
 ditto "$REPOSITORY_ROOT/Examples/Shared" "$TEST_WORKSPACE/Examples/Shared"
 ditto "$REPOSITORY_ROOT/Examples/$EXAMPLE" "$TEST_WORKSPACE/Examples/$EXAMPLE"
@@ -90,7 +90,7 @@ if [[ "$PACKAGE_MANAGER" == swiftpm ]]; then
       's{/\* Begin XCRemoteSwiftPackageReference section \*/.*?/\* End XCRemoteSwiftPackageReference section \*/}{/\* Begin XCLocalSwiftPackageReference section \*/\n\t\tA00000000000000000000001 /\* XCLocalSwiftPackageReference "LiteRT" \*/ = {\n\t\t\tisa = XCLocalSwiftPackageReference;\n\t\t\trelativePath = LiteRT;\n\t\t};\n/\* End XCLocalSwiftPackageReference section \*/}s' \
       "$PROJECT_FILE"
     sed -i '' \
-      's/XCRemoteSwiftPackageReference "litert-ios"/XCLocalSwiftPackageReference "LiteRT"/g' \
+      's/XCRemoteSwiftPackageReference "litert-xcframework"/XCLocalSwiftPackageReference "LiteRT"/g' \
       "$PROJECT_FILE"
     grep -q 'isa = XCLocalSwiftPackageReference;' "$PROJECT_FILE"
     if grep -q 'XCRemoteSwiftPackageReference' "$PROJECT_FILE"; then

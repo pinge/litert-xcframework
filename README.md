@@ -32,7 +32,7 @@ Use this package:
 Open Xcode, open `File` > `Add Package Dependencies...` and paste this repo URL in `Search or Enter Package URL`:
 
 ```text
-https://github.com/pinge/litert-ios
+https://github.com/pinge/litert-xcframework
 ```
 
 Select `Exact Version` in `Dependency Rule` and enter `2.1.6` or `2.2.0`. Select your project in `Add to Project` and click `Add Package`. Select your application in `Add to Target` and click `Add Package` again to add the `LiteRT` package product.
@@ -42,7 +42,7 @@ For a `Package.swift` dependency:
 ```swift
 dependencies: [
   .package(
-    url: "https://github.com/pinge/litert-ios.git",
+    url: "https://github.com/pinge/litert-xcframework.git",
     exact: "2.1.6"
   ),
 ],
@@ -50,7 +50,7 @@ targets: [
   .target(
     name: "YourTarget",
     dependencies: [
-      .product(name: "LiteRT", package: "litert-ios"),
+      .product(name: "LiteRT", package: "litert-xcframework"),
     ]
   ),
 ]
@@ -61,7 +61,7 @@ targets: [
 Pin the release version (`2.1.6` or `2.2.0`) podspec and run `pod install`:
 
 ```ruby
-pod 'LiteRT', :podspec => 'https://raw.githubusercontent.com/pinge/litert-ios/v2.1.6/LiteRT.podspec'
+pod 'LiteRT', :podspec => 'https://raw.githubusercontent.com/pinge/litert-xcframework/v2.1.6/LiteRT.podspec'
 ```
 
 When switching between versions make sure to clean your build folder or you might hit build errors.
@@ -167,7 +167,7 @@ ios_sim_arm64: 01 00 00 00 00 00 00 00
 ```
 
 ```bash
-release="https://github.com/pinge/litert-ios/releases/download/v2.2.0"
+release="https://github.com/pinge/litert-xcframework/releases/download/v2.2.0"
 archive="LiteRTMetalAccelerator-v2.2.0.xcframework.zip"
 curl -fsSL "$release/LiteRTMetalAccelerator.xcframework.zip" -o "$archive"
 

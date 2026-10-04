@@ -7,7 +7,7 @@ target 'LiteRTExample' do
   if litert_path
     pod 'LiteRT', :path => litert_path
   else
-    pod 'LiteRT', :podspec => "https://raw.githubusercontent.com/pinge/litert-ios/v#{litert_version}/LiteRT.podspec"
+    pod 'LiteRT', :podspec => "https://raw.githubusercontent.com/pinge/litert-xcframework/v#{litert_version}/LiteRT.podspec"
   end
 
   target 'LiteRTExampleTests' do

@@ -66,6 +66,19 @@ jobs:
       - name: Select Xcode
         run: sudo xcode-select -s "/Applications/Xcode_${XCODE_VERSION}.app/Contents/Developer"
 
+      - name: Create Simulator
+        env:
+          IOS_RUNTIME: "26.5"
+        run: |
+          # https://github.com/actions/runner-images/issues/12862#issuecomment-3209385688
+          xcrun simctl list > /dev/null
+          RUNTIME_ID="com.apple.CoreSimulator.SimRuntime.iOS-${IOS_RUNTIME//./-}"
+          SIMULATOR_ID="$(xcrun simctl create \
+            "LiteRT iOS ${IOS_RUNTIME}" \
+            com.apple.CoreSimulator.SimDeviceType.iPhone-13 \
+            "$RUNTIME_ID")"
+          echo "SIMULATOR_ID=$SIMULATOR_ID" >> "$GITHUB_ENV"
+
       - name: Test Integration
         run: Tests/test-integration.sh simulator "${{ inputs.version }}" "${{ matrix.package_manager }}"
 

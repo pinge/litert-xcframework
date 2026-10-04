@@ -226,7 +226,7 @@
 			);
 			mainGroup = 700000000000000000000001;
 			packageReferences = (
-				A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-ios" */,
+				A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-xcframework" */,
 			);
 			productRefGroup = 700000000000000000000005 /* Products */;
 			projectDirPath = "";
@@ -477,9 +477,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-ios" */ = {
+		A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-xcframework" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pinge/litert-ios.git";
+			repositoryURL = "https://github.com/pinge/litert-xcframework.git";
 			requirement = {
 				kind = exactVersion;
 				version = 2.1.6;
@@ -490,17 +490,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		A00000000000000000000002 /* LiteRT */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-ios" */;
+			package = A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-xcframework" */;
 			productName = LiteRT;
 		};
 		A00000000000000000000003 /* LiteRT */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-ios" */;
+			package = A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-xcframework" */;
 			productName = LiteRT;
 		};
 		A00000000000000000000004 /* LiteRT */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-ios" */;
+			package = A00000000000000000000001 /* XCRemoteSwiftPackageReference "litert-xcframework" */;
 			productName = LiteRT;
 		};
 /* End XCSwiftPackageProductDependency section */
