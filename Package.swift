@@ -2,7 +2,7 @@
 
 import PackageDescription
 
-let release = "https://github.com/pinge/litert-xcframework/releases/download/v2.1.6"
+let release = "https://github.com/pinge/litert-xcframework/releases/download/v2.2.0"
 
 let package = Package(
   name: "LiteRT",
@@ -22,12 +22,12 @@ let package = Package(
     .binaryTarget(
       name: "CLiteRT",
       url: "\(release)/CLiteRT.xcframework.zip",
-      checksum: "621cbf3716fe22a59091422bdac80128f47fb11a079c3c0cf837417545372060"
+      checksum: "81039e06794fe86f05e98ab82c7a14e42fd438233492cf1550092717b492e367"
     ),
     .binaryTarget(
       name: "LiteRTMetalAccelerator",
       url: "\(release)/LiteRTMetalAccelerator.xcframework.zip",
-      checksum: "bbcb3b5854daa1735988b6f1db77064eb6789cfa23b8833ecc6221ee2d0dc981"
+      checksum: "617bccc040fcce5fef11bf067ad6159320978893a6bceca8e5f7bcb5959d0896"
     ),
   ]
 )

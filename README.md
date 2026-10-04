@@ -2,7 +2,7 @@
 
 LiteRT iOS XCFrameworks for Swift Package Manager and CocoaPods.
 
-[![LiteRT v2.1.6](https://img.shields.io/github/v/release/pinge/litert-xcframework?filter=v2.1.6&label=LiteRT&style=plastic&color=green)](https://github.com/pinge/litert-xcframework/releases/tag/v2.1.6)
+[![LiteRT v2.1.6](https://img.shields.io/github/v/release/pinge/litert-xcframework?filter=v2.1.6&label=LiteRT&style=plastic&color=green)](https://github.com/pinge/litert-xcframework/releases/tag/v2.1.6) [![LiteRT v2.2.0](https://img.shields.io/github/v/release/pinge/litert-xcframework?filter=v2.2.0&label=LiteRT&style=plastic&color=green)](https://github.com/pinge/litert-xcframework/releases/tag/v2.2.0)
 
 ## Why this package
 
